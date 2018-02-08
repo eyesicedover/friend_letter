@@ -39,7 +39,14 @@ namespace FriendLetter.Controllers
             LetterVariable myLetterVariable = new LetterVariable();
             myLetterVariable.SetRecipient(Request.Query["recipient"]);
             myLetterVariable.SetSender(Request.Query["sender"]);
-            return View("greeting_card", myLetterVariable);
+            return View("GreetingCard", myLetterVariable);
+        }
+
+        [Produces("text/html")]
+        [Route("/favorite_photos")]
+        public ActionResult FavoritePhotos()
+        {
+            return View();
         }
     }
 }
